@@ -1,0 +1,155 @@
+#nav{
+    @include flexbtwn(row);
+    position: fixed;
+    height: 10vh;
+    @include mainWidth();
+    background-color: $primarycolor;   
+    padding: 0 5%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    word-spacing: 3px;
+}
+#logo{
+    color: $color7;
+    font-size: 25px;
+    span{
+        font-size: 30px;
+        color: $royal;
+    }
+}
+.lists{
+    display: flex;
+    flex-wrap: wrap;
+    a{
+        margin: 0 15px;
+        color: $color7;
+        font-weight: 500;
+        &:hover{
+            color: $royal;
+            transition: 0.3s;
+        }
+    }
+}
+.hamburger{
+    font-size: 20px;
+    color: $color7;
+    display: none;
+}
+
+@media screen and (max-width: 1250px){
+    #logo{
+        font-size: 20px;
+        span{
+            font-size: 25px;
+        }
+    }    
+    .nav-links ul a{
+        font-size: 15px;
+    }        
+}
+@media screen and (max-width: 1042px){
+    .nav-links ul a{
+        font-size: 13px;
+        margin: 0 10px;
+    }    
+}
+@media screen and (max-width: 1000px){  
+    .nav-links ul a{
+        font-size: 13px;
+        margin: 0 10px;
+    }              
+}
+@media screen and (max-width: 900px){
+    #logo{
+        font-size: 19px;
+        span{
+            font-size: 21px;
+        }
+    }    
+    .nav-links ul a{
+        font-size: 11px;
+        margin: 0 5px;
+    }                
+}
+@media screen and (max-width: 800px){    
+    .lists{                
+        @include flexbtwn(column);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        background-color: $primarycolor;
+        clip-path: circle(100px at 90% -30%);
+        -webkit-clip-path: circle(100px at 90% -30%);
+        transition: all 0.5s;
+        pointer-events: none;
+    }
+    .nav-links li{
+        margin: -50px 0;
+    }
+    .nav-links li:nth-child(1){
+        margin: 150px 0 -50px;
+        a{
+        color: $royal;
+        font-size: 30px;
+        text-decoration: underline;
+        }
+    }        
+    .nav-links li:nth-child(6){
+        margin: -50px 0 100px;
+    }
+    .nav-links ul li a{
+        font-size: 18px;        
+        font-weight: 800;
+    }
+    .lists.open{
+        clip-path: circle(1200px at 90% -30%);
+        -webkit-clip-path: circle(1200px at 90% -30%);
+        pointer-events: all;
+    }
+    .hamburger{
+        display: block;
+        cursor: pointer;
+        z-index: 1;
+    }        
+}
+// @media screen and (max-width: 713px){
+//     .nav-links ul li a{
+//         font-size: 10px;
+//     }
+// }
+
+@media screen and (max-width: 450px){  
+    #logo{
+        font-size: 12px;
+        span{
+            font-size: 16px;
+        }
+    }    
+}
+@media screen and (max-width: 300px){  
+    #logo{
+        font-size: 10px;
+        span{
+            font-size: 15px;
+        }
+    }   
+}
+@media screen and (min-width: 1367px){
+    .nav-links ul a{
+        font-size: 15px;
+    }     
+}
+@media screen and (min-width: 1402px) {     
+    #logo{
+        font-size: 30px;
+        span{
+            font-size: 40px;
+        }
+    }    
+    .nav-links ul a{
+        font-size: 20px;
+        margin: 0 18px;
+    }    
+}

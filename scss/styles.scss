@@ -1,0 +1,1280 @@
+@import 'vars&funcs';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background-color: $primarycolor;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+@import 'nav';
+
+.btn-1{
+    @include button();
+    border: solid 1px $color7;       
+    color: $color7;
+    &:hover{
+        background-color: $color5;
+        color: $white;
+        transition: 0.5s;
+    }
+}
+.btn-2{    
+    @include button();
+    border: solid 1px $white;    
+    color: $white;
+    &:hover{
+        background-color: $white;
+        color: $color7;
+        transition: 0.5s;
+    }
+}
+
+.all-headings{
+    @include flexCenter(row);     
+    margin: 100px 0 0;   
+}
+.all-headings.all-headings-minor{
+    margin: 50px 0;
+}
+.line{
+    height: 6px;
+    width: 350px;        
+    background-color: $royal;
+}
+.line2{
+    height: 5px;
+    width: 100px;    
+    margin: 0 auto;
+    background-color: $royal;
+}
+.section-heading{
+    margin: 0 20px;
+    font-size: 30px;
+    color: $color5;
+    text-align: center;
+}
+
+/* ----------------------------------------------- home page --------------------------------------------- */
+
+@import 'home';
+
+
+/* -------------------------------------------------- about page ------------------------------------------ */
+/* -------------------------------------------------- header section -------------------------------------- */
+.about{
+    @include mainWidth();
+}
+.about-page{
+    @extend .nutrition;
+}
+.about-header{
+    height: 100vh;        
+    @include flexCenter(column);
+    color: $white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/background-3.jpg);  
+    @include background();
+}
+.about-content{
+    @extend .nutrition-content;
+}
+
+// .about-header video{
+//     position: absolute;  
+//     @include mainWidth();  
+//     height: 100%;
+//     object-fit: cover;
+//     opacity: 0.8;
+// }
+// .about-header .text{
+//     position: relative;
+//     z-index: 2;
+//     color: $white;
+// }
+// .about-header .text h4{
+//     font-size: 40px;
+// }
+// .text p{
+//     font-size: 20px;
+//     margin: 20px 0;
+//     max-width: 700px;    
+// }
+// .video-overlay{
+//     position: absolute;
+//     @include mainWidth();     
+//     height: 100%;
+//     background: #000;
+//     mix-blend-mode: overlay;
+// }
+
+.about-text-content{    
+    padding: 100px 0;
+    @include maxWidth(60%); 
+    margin: 0 auto;
+}
+.about-text{        
+    h4{
+        color: $color7;
+        font-size: 45px;
+        text-align: center;
+    }
+    span{
+        color: $royal;
+    }
+    p{    
+        font-size: 20px;
+        margin-top: 20px;
+        span{
+            float: left;
+            line-height: 85%;
+            width: 0.7em;
+            font-size: 450%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            
+        }
+    }    
+}
+.about-img img{
+    float: right;
+    width: 450px;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px $color5;
+    margin: 0 0 20px 20px;    
+}
+@media screen and (max-width: 1150px){
+    .about-text-content{    
+        @include flexCenter(column);
+    }
+}
+@media screen and (max-width: 1000px){
+    .about-text{        
+        h4{
+            font-size: 40px;
+        }
+        p{    
+            font-size: 18px;
+        }
+    }
+}
+@media screen and (max-width: 700px){
+    .about-text{        
+        h4{
+            font-size: 30px;
+        }
+        p{    
+            font-size: 15px;
+        }
+    }
+    .about-img img{
+        width: 300px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 600px){
+    .about-text{        
+        h4{
+            font-size: 25px;
+        }
+        p{    
+            font-size: 10px;
+        }
+    }
+    .about-img img{
+        width: 250px;
+        height: 150px;
+    }
+}
+@media screen and (max-width: 400px){
+    .about-text{        
+        h4{
+            font-size: 25px;
+        }
+        p{    
+            font-size: 8px;
+        }
+    }
+}
+@media screen and (max-width: 300px){
+    .about-text{        
+        h4{
+            font-size: 20px;
+        }
+        p{    
+            font-size: 6px;
+        }
+    }
+    .about-img img{
+        width: 200px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 250px){ 
+    .about-img img{
+        width: 180px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 230px){ 
+    .about-img img{
+        width: 150px;
+        height: 100px;
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------- nutrition page ------------------------------------------- */
+/* -------------------------------------------------- header section ------------------------------------------- */
+.nutrition{
+    @include mainWidth();
+}
+.nutrition-header{
+    height: 100vh;        
+    @include flexCenter(column);
+    color: rgb(255, 255, 255);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/nutrition.jpg);  
+    @include background();
+}
+.nutrition-content{
+    width: 60vw;
+    max-width: 1000px;
+    text-align: center;
+}
+.nutrition-content h3{
+    font-size: 40px;
+    margin-bottom: 20px;  
+    color: transparent;
+    animation: animate-1 2s ease forwards;      
+}
+.nutrition-content span{
+    color: $royal;
+}
+.nutrition-content p{
+    font-size: 20px;
+    color: transparent;
+    animation: animate-2 3s ease forwards;
+    animation-delay: 1s;
+}
+@keyframes animate-1{
+    0%{
+        opacity: 0;transform: translateY(-400px);
+    }
+    100%{
+        opacity: 1;transform: translateY(0px);
+        color: white;
+    }
+}
+@keyframes animate-2{
+    0%{
+        opacity: 0;transform: translateY(400px);
+    }
+    100%{
+        opacity: 1;transform: translateY(0px); 
+        color: white;       
+    }
+}
+@media screen and (max-width: 700px){
+    .nutrition-content h3{
+        font-size: 30px;
+        margin-bottom: 18px;    
+    }
+    .nutrition-content p{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 370px){
+    .nutrition-content h3{
+        font-size: 28px;    
+    }
+}
+@media screen and (max-width: 300px){
+    .nutrition-content h3{
+        font-size: 25px;
+        margin-bottom: 15px;    
+    }
+    .nutrition-content p{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 200px){
+    .nutrition-content h3{
+        font-size: 20px;
+        margin-bottom: 10px;    
+    }
+    .nutrition-content p{
+        font-size: 13px;
+    }
+}
+
+/* ---------------------------------------------- nutrition tips --------------------------------------------- */
+.nutrition-tips{
+    @include maxWidth(80%);
+}
+// .all-headings{
+//     margin-top: 20px;
+//     padding-top: 40px;
+// }
+.nutrition-tips h2{
+    font-size: 28px;    
+}
+.nutrition-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0 0 40px;
+}
+.cards h4{
+    margin-top: 15px;
+}
+.nutrition-articles{
+    color: black;
+    transition: 0.5s;
+}
+.nutrition-articles:hover{
+    color: $royal;
+}
+.card-image{
+    width: 100%;
+    height: 200px; 
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;    
+    border-radius: 10px;
+    position: relative;
+}
+.overlay{
+    background: linear-gradient(rgba(0,0,0,0.5), #000);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    transition: 1s;
+}
+.card-image:hover .overlay{
+    opacity: 1;
+}
+.card-image .btn-2{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: 1s;
+}
+.card-image:hover .btn-2{
+    opacity: 1;
+    bottom: 50%;
+}
+.n-card-1{
+    background-image: url(../images/fruits-1.jpg);    
+}
+.n-card-2{
+    background-image: url(../images/fish.jpg);
+}
+.n-card-3{
+    background-image: url(../images/vege.jpg);
+}
+.n-card-4{
+    background-image: url(../images/trainer.jpg);
+}
+.n-card-5{
+    background-image: url(../images/drinks.jpg);
+}
+.n-card-6{
+    background-image: url(../images/vitamins.jpg);
+}
+
+@media screen and (max-width: 1000px){
+    .card-image .btn-2{
+        padding: 10px;
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 900px){
+    .card-image .btn-2{
+        padding: 8px;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 777px){
+    .card-image .btn-2{
+        padding: 7px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 722px){
+    .card-image .btn-2{
+        padding: 5px;
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 550px){
+    .nutrition-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nutrition-tips h2{
+        font-size: 20px;    
+    }
+    .card-image .btn-2{
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 400px){
+    .nutrition-cards{
+        grid-template-columns: 1fr;
+    }
+    .card-image{
+        // width: 80%;
+        height: 150px;
+    }
+}
+
+
+
+/* -------------------------------------------------- workouts page ------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------- workout section ------------------------------------------ */
+.workouts-tips-drills{
+    @include maxWidth(80%);
+}
+.workouts-tips-drills h2{
+    font-size: 30px;
+    text-align: center;
+}
+.collections{
+    h4{
+        color: $royal;
+    }
+    h1{        
+        cursor: pointer;
+        &:hover{
+            color: $royal;
+        }
+    }
+}
+.collection-1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    grid-gap: 40px;    
+    padding: 50px 0;
+    h1{
+        color: $color7;
+    }
+    img{
+        height: 300px;
+        width: 100%;        
+    }
+}
+
+.line-division{
+    width: 100%;
+    height: 1px;
+    background-color: $color4;
+}
+
+.collection-2{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;    
+    padding: 60px 0;
+    .collection-2-cards{
+        display: flex;
+        height: 200px;
+    }
+    .collection-2-caption{
+        margin-left: 20px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        h1{
+            color: $color5;
+            font-size: 30px;
+            margin-bottom: 15px; 
+            &:hover{
+                color: $royal;
+            }                       
+        }
+    }
+    img{
+        height: 100%;       
+        width: 250px;
+    }
+}
+
+
+.collection-3{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);    
+    grid-gap: 20px;    
+    padding: 50px 0;
+    h1{
+        color: $color7;
+        font-size: 15px;
+    }
+    img{
+        height: 150px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .collection-1{                
+        grid-gap: 40px;    
+        padding: 50px 0;
+        img{
+            height: 200px;
+            width: 100%;
+        }
+    }
+    .collections{
+        h1{        
+            font-size: 20px;
+        }
+    }
+    .collection-2{        
+        .collection-2-caption{            
+            width: 600px;            
+            h1{                
+                font-size: 25px;                                                
+            }
+        }
+        img{
+            height: 100%;       
+            width: 230px;
+        }
+    }
+}
+@media screen and (max-width: 950px){
+    .collection-2{        
+        .collection-2-caption{            
+            width: 500px;            
+            h1{                
+                font-size: 22px;   
+                margin-bottom: 5px;                                             
+            }
+        }
+    }
+    .collection-3{
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;     
+        h1{
+            font-size: 15px;
+        }
+        img{
+            height: 150px;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 840px){
+    .collection-2{      
+        .collection-2-caption{
+            margin-left: 10px;
+            width: 450px;            
+            h1{
+                font-size: 28px;                                      
+            }
+        }
+        img{
+            height: 100%;       
+            width: 200px;
+        }
+    }
+    .collection-3{                         
+        img{
+            height: 140px;            
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .collection-1{                
+        grid-gap: 20px;    
+        padding: 50px 0;
+        img{
+            height: 180px;
+            width: 100%;
+        }
+        h1{
+            font-size: 16px;
+        }
+        p{
+            font-size: 15px;
+        }
+    }
+    .collection-2{ 
+        grid-gap: 1px;     
+        .collection-2-caption{
+            margin-left: 20px;
+            width: 450px;  
+            h4{
+                font-size: 15px;
+            }          
+            h1{
+                font-size: 20px;                                      
+            }
+        }
+        img{
+            height: 90%;       
+            width: 180px;
+        }
+    }
+    .collection-3{                         
+        img{
+            height: 120px;            
+        }
+        p{
+            font-size: 14px
+        }
+    }
+}
+@media screen and (max-width: 730px){
+    .collection-1{                
+        grid-gap: 10px;    
+        padding: 25px 0;
+        img{
+            height: 140px;            
+        }
+        h4{
+            font-size: 13px;
+        }
+        h1{
+            font-size: 15px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    .collection-2{ 
+        grid-gap: 0;
+        padding: 50px 0 5px;
+        .collection-2-caption{
+            margin-left: 18px;
+            width: 300px;  
+            h4{
+                font-size: 13px;
+            }          
+            h1{
+                font-size: 18px;                                      
+            }
+        }
+        img{
+            height: 80%;       
+            width: 180px;
+        }
+    }
+    .collection-3{   
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;                       
+        img{
+            height: 120px;            
+        }
+        p{
+            font-size: 14px
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .collection-1{     
+        grid-template-columns: repeat(2, 1fr); 
+        .collection-1-cards.card-3{
+            grid-column: 1/3;
+            width: 50%;
+            margin: auto;
+        }   
+        img{
+            height: 200px;
+            width: 100%;        
+            margin-bottom: 20px;
+        }                        
+        h4{
+            font-size: 15px;
+        }
+        h1{
+            font-size: 18px;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+    .collection-2{         
+        padding: 30px 0 5px;
+        .collection-2-cards{            
+            height: 150px;
+        }
+        .collection-2-caption{
+            margin-left: 18px;   
+            width: 200px;          
+            h4{
+                font-size: 13px;
+            }          
+            h1{
+                font-size: 13px;                                      
+            }
+            p{
+                font-size: 13px;
+            }
+        }
+        img{
+            height: 90%;       
+            width: 150px;
+        }
+    }
+    .collection-3{   
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;     
+        // padding: 30px 0 30px 30px;                  
+        img{
+            height: 100px;
+            width: 100%;            
+        }
+        h4{
+            font-size: 14px;
+        }
+        p{
+            font-size: 14px;
+            margin-bottom: 10px
+        }
+    }
+}
+@media screen and (max-width: 425px){
+    .collection-1{     
+        img{
+            height: 130px;                   
+            margin-bottom: 10px;
+        }                        
+        h4{
+            font-size: 15px;
+        }
+        h1{
+            font-size: 16px;
+        }
+        p{
+            font-size: 15px;
+        }
+    }
+    .collection-2{         
+        padding: 30px 0 5px;
+        .collection-2-cards{            
+            height: 160px;
+        }
+        .collection-2-caption{
+            margin-left: 18px;   
+            width: 100px;          
+            h4{
+                font-size: 13px;
+            }          
+            h1{
+                font-size: 13px;                                      
+            }
+            p{
+                font-size: 13px;
+            }
+        }
+        img{
+            height: 90%;       
+            width: 130px;
+        }
+    }
+    .collection-3{   
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;     
+        padding: 30px 0;
+        h4{
+            font-size: 14px;
+        }
+        p{
+            font-size: 14px;
+            margin-bottom: 10px
+        }
+    }
+}
+@media screen and (max-width: 320px){
+    .collection-1{       
+        img{
+            height: 100px;
+            width: 100%;        
+            margin-bottom: 10px;
+        }                        
+        h4{
+            font-size: 12px;
+        }
+        h1{
+            font-size: 13px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+    .collection-2{         
+        padding: 30px 0 5px;
+        .collection-2-cards{            
+            height: 150px;
+        }
+        .collection-2-caption{
+            margin-left: 10px;            
+            h4{
+                font-size: 11px;
+            }          
+            h1{
+                font-size: 13px;                                      
+            }
+            p{
+                font-size: 12px;
+            }
+        }
+        img{
+            height: 60%;       
+            width: 100px;
+        }
+    }
+    .collection-3{           
+        grid-gap: 10px;     
+        padding: 30px 0;
+        h4{
+            font-size: 14px;
+        }
+        p{
+            font-size: 14px;
+            margin-bottom: 10px
+        }
+    }
+}
+
+/* -------------------------------------------------- trainings page ------------------------------------------- */
+
+.all-headings-major2{    
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------------------------- join page -------------------------------------------
+// ------------------------------------ header section -------------------------------------------
+.join-page{
+    @extend .nutrition;
+}
+.join-header{
+    @extend .nutrition-header;       
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/join1.jpg);
+    @include background();
+    color: $color5;
+}
+.form-box{    
+    padding: 50px;
+    border-radius: 20px;
+    background-color: $primarycolor;
+    opacity: .5;
+    box-shadow: 0 0 10px 10px $primarycolor;
+    h4{
+        margin: 0 0 10px;
+        font-weight: 800;
+        font-size: 50px;
+        color: $color7;
+    }
+    p{
+        color: $color7;
+        font-weight: 700;
+        font-size: 30px;
+        margin: 0 0 10px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .form-box{    
+        padding: 25px;                        
+        h4{
+            font-weight: 700;
+            font-size: 40px;        
+        }
+        p{            
+            font-weight: 500;
+            font-size: 25px;            
+        }
+    }
+}
+@media screen and (max-width: 1000px){
+    .form-box{    
+        padding: 20px;                        
+        h4{
+            font-weight: 500;
+            font-size: 35px;        
+        }
+        p{            
+            font-weight: 400;
+            font-size: 20px;            
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .form-box{    
+        padding: 20px;                        
+        h4{
+            font-size: 30px;        
+        }
+        p{            
+            font-size: 18px;            
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .form-box{    
+        padding: 18px;                        
+        h4{            
+            font-size: 25px;        
+        }
+        p{                    
+            font-size: 15px;            
+        }
+    }
+}
+@media screen and (max-width: 450px){
+    .form-box{    
+        padding: 10px;                        
+        h4{            
+            font-size: 18px;        
+        }
+        p{                    
+            font-size: 8px;            
+        }
+    }
+}
+@media screen and (max-width: 300px){
+    .form-box{    
+        padding: 8px;                        
+        h4{            
+            font-size: 15px;        
+        }
+        p{                    
+            font-size: 5px;            
+        }
+    }
+}
+
+// ------------------------------------ of the week section -------------------------------------------
+.of-the-week{
+    background-color: $white;
+    @include mainWidth();
+    @include flexCenter(column);
+    padding: 50px 100px;
+    h4{
+        font-size: 50px;
+        color: $color7;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    img{
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 10px $color5;
+    }
+    p{
+        text-align: center;
+        margin: 20px 0 10px;
+        font-size: 28px;
+        font-weight: 600;
+        color: $color7;
+    }
+}
+
+
+@media screen and (max-width: 700px){    
+    .of-the-week{        
+        h4{
+            font-size: 45px;                        
+        }
+        p{
+            font-size: 25px;
+        }
+    }
+}
+@media screen and (max-width: 650px){    
+    .of-the-week{        
+        h4{
+            font-size: 40px;                        
+        }
+        img{
+            width: 250px;
+            height: 250px;                        
+        }
+    }
+}
+@media screen and (max-width: 500px){    
+    .of-the-week{        
+        h4{
+            font-size: 35px;                        
+        }
+        p{
+            font-size: 20px;
+        }
+    }
+}
+@media screen and (max-width: 400px){    
+    .of-the-week{        
+        h4{
+            font-size: 28px;                        
+        }
+        img{
+            width: 200px;
+            height: 200px;                        
+        }
+    }
+}
+@media screen and (max-width: 300px){    
+    .of-the-week{        
+        h4{
+            font-size: 25px;                        
+        }
+        img{
+            width: 180px;
+            height: 180px;                        
+        }
+        p{
+            font-size: 18px;
+        }
+        .line2{
+            width: 80px;
+        }
+    }
+}
+// ------------------------------------ featured section -------------------------------------------
+.featured{
+    background-color: black;
+    padding: 50px 100px;
+    color: $white;
+    @include mainWidth();
+    h4{
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}
+.featured-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    img{
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px $primarycolor;
+    }
+    p{
+        margin: 10px 0;
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 1200px){    
+    .featured-container{ 
+        grid-template-columns: repeat(4, 1fr);          
+    }
+}
+@media screen and (max-width: 1000px){
+    .featured{       
+        padding: 50px 80px;
+        h4{
+            font-size: 45px;
+        }
+    }
+    .featured-container{ 
+        grid-template-columns: repeat(3, 1fr);         
+    }
+}
+@media screen and (max-width: 800px){
+    .featured{       
+        padding: 40px 60px;
+        h4{
+            font-size: 40px;
+        }
+    }
+}
+@media screen and (max-width: 650px){
+    .featured{       
+        padding: 40px 60px;
+        h4{
+            font-size: 35px;
+        }
+    }
+    .featured-container{ 
+        grid-template-columns: repeat(2, 1fr);         
+    }
+}
+@media screen and (max-width: 500px){
+    .featured{        
+        padding: 35px 38px 35px 30px;                
+        h4{
+            font-size: 30px;
+        }
+    }
+}
+@media screen and (max-width: 350px){    
+    .featured-container{ 
+        grid-template-columns: 1fr;         
+    }
+}
+
+
+
+// -------------------------- ladies session page -------------------------------------
+// -------------------------- cards section -------------------------------------------
+.ladies-tips{
+    padding: 50px;
+    @include maxWidth(80%);
+}
+.all-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+.general-card-image{
+    width: 100%;
+    height: 200px;    
+}
+.card-description{
+    text-decoration: none;
+    h4{
+        color: $color5;
+        &:hover{
+            color: $royal;
+        }
+    }
+    p{
+        color: $color5;
+        &:hover{
+            color: $royal
+        }
+    }
+}
+
+@media screen and (max-width: 1350px){
+    .ladies-tips{    
+        .section-heading{
+            font-size: 30px;
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+    .ladies-tips{ 
+        padding: 50px 0;   
+        .section-heading{
+            font-size: 30px;
+        }        
+    }
+    .all-cards{        
+        grid-template-columns: repeat(3, 1fr);            
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .ladies-tips{    
+        .section-heading{
+            font-size: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 904px){
+    .ladies-tips{    
+        .section-heading{
+            font-size: 18px;
+        }
+        .line{            
+            width: 150px;            
+        }
+    }
+}
+
+@media screen and (max-width: 711px){
+    .ladies-tips{    
+        .section-heading{
+            font-size: 17px;
+        }
+        .line{            
+            width: 100px;            
+        }
+    }
+}
+@media screen and (max-width: 576px){
+    .ladies-tips{    
+        .section-heading{
+            font-size: 14px;
+            margin: 0 5px;
+        }
+        .line{            
+            width: 50px;            
+        }
+    }
+    .all-cards{        
+        grid-template-columns: 1fr; 
+        grid-gap: 20px 0;           
+    }
+}
+@media screen and (max-width: 400px){
+    .ladies-tips{    
+        .section-heading{
+            font-size: 13px;
+            margin: 0 3px;
+        }
+        .line{            
+            width: 30px;            
+        }
+    }
+}
+
+
+
+
+@import 'footer';

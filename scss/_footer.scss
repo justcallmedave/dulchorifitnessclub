@@ -1,0 +1,232 @@
+footer{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 50px 100px;
+    @include mainWidth();
+    // position: absolute;
+    // bottom: 0;
+}
+.footer-top{
+    @include flexbtwn(row);
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+}
+.footer-bottom{
+    @include flexbtwn(column);
+    margin-top: 20px
+    // justify-content: space-around;
+}
+.news-letter{
+    @include flexbtwn(column);
+}
+footer h4{
+    margin: 0 0 10px;
+    font-size: 30px;
+    color: $color7;
+}
+footer p{
+    color: $color7;
+    font-size: 20px;
+    margin: 0 0 10px;    
+}
+footer a, .copyright p{
+    color: $color7; 
+    font-size: 20px;
+}
+footer a:hover{
+    color: $royal;
+}
+.submission{
+    margin: 20px 0 0;
+    @include flexCenter(column);
+}
+#email-input, #j-email-input{    
+    color: $color7;
+    padding: 5px 10px;
+    outline: none;
+    border: 2px solid $color5;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px $color5;
+}
+#submit, #j-submit{
+    color: $white;
+    background-color: $color5;
+    cursor: pointer;
+    padding: 5px 10px;
+    outline: none;
+    border: 2px solid $color5;
+    width: 100px;    
+    border-radius: 20px;    
+}
+input[type="radio"]{
+    display: none;
+}
+.radios{
+    @include flexCenter(row);
+    div{
+        margin-right: 10px;
+    }
+}
+label{
+    position: relative;
+    color: $color5;
+    font-size: 15px;
+    border: 2px solid $color5;
+    border-radius: 20px;
+    padding: 0 10px;
+    @include flexCenter(row);
+    cursor: pointer;
+}
+label::before{
+    // position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    border: 3px solid $color5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+input[type="radio"]:checked + label{
+    background-color: $color5;
+    color: white;
+}
+input[type="radio"]:checked + label::before{
+    height: 5px;
+    width: 5px;
+    border: 3px solid $white;
+    background-color: $color5;
+}
+.contacts{
+    text-align: center;
+}
+.mail:hover{
+    color: rgba(255, 0, 0, 0.5);    
+}
+.phone:hover{
+    color: rgba(0, 104, 0, 0.8);    
+}
+
+@media screen and (max-width: 1250px){
+    footer h4{
+        font-size: 20px;
+    }
+    footer a, .copyright p{        
+        font-size: 18px;
+    }    
+    label{        
+        font-size: 15px;        
+        padding: 0 8px;
+    }
+    #email-input, #j-email-input{                      
+        width: 200px;
+    }
+}
+@media screen and (max-width: 1080px){
+    footer h4{
+        font-size: 15px;
+    }   
+    footer a, .copyright p{        
+        font-size: 13x;
+    } 
+    label{        
+        font-size: 13px;        
+        padding: 1px 5px;
+    }   
+    label::before{        
+        height: 8px;
+        width: 8px;                
+        margin-right: 8px;
+    }
+}
+@media screen and (max-width: 1000px){
+    .footer-top{
+        @include flexCenter(column);
+    }
+    footer{        
+        padding: 50px 100px;        
+    } 
+    footer h4{
+        font-size: 25px;
+        margin-top: 20px;
+    }   
+    footer a, .copyright p{        
+        font-size: 20px;
+    } 
+    label{        
+        font-size: 18px;        
+        padding: 1px 10px;
+    }   
+    label::before{        
+        height: 10px;
+        width: 10px;                        
+    }
+    #email-input, #j-email-input{                      
+        width: 300px;
+    }
+    .footer-bottom{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 550px){   
+    footer h4{
+        font-size: 20px;
+        margin-top: 18px;
+    }   
+    footer{        
+        padding: 20px 50px;        
+    }
+    footer a, .copyright p{        
+        font-size: 18px;
+    } 
+    label{        
+        font-size: 15px;        
+        padding: 0 8px;
+    }   
+    label::before{        
+        height: 8px;
+        width: 8px;                        
+    }
+}
+@media screen and (max-width: 500px){   
+    footer h4{
+        font-size: 18px;
+        margin-top: 15px;
+    }   
+    footer a, .copyright p{        
+        font-size: 15px;
+    } 
+    label{        
+        font-size: 13px;        
+        padding: 0 5px;
+    }   
+    label::before{        
+        height: 5px;
+        width: 5px;                        
+    }
+    #email-input, #j-email-input{                      
+        width: 200px;
+    }
+}
+@media screen and (max-width: 400px){   
+    footer{        
+        padding: 10px 20px;        
+    }
+    footer h4{
+        font-size: 15px;
+    }   
+    footer a, .copyright p{        
+        font-size: 13px;
+    } 
+    label{        
+        font-size: 10px;        
+        padding: 0 3px;
+    }   
+    label::before{        
+        height: 3px;
+        width: 3px;                        
+    }  
+    .submission{
+        @include flexCenter(column);
+    }
+}

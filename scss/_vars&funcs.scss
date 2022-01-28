@@ -1,0 +1,50 @@
+$primarycolor: #ffffff;
+$primarycolor2: #ffffffab;
+$color3: rgba(0, 0, 0, 0.137);
+$color4: rgba(0, 0, 0, 0.5);
+$color5: rgba(0, 0, 0, 0.7);
+$color7: rgb(0, 0, 0);
+$white: white;
+$royal: royalblue;
+$royal2: rgb(55, 85, 175);
+
+@mixin flexCenter($flexdirection) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $flexdirection;
+}
+@mixin flexbtwn($flexdirection) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: $flexdirection;
+}
+@mixin button {
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer; 
+}
+@mixin maxWidth($width) {
+    width: $width;
+    max-width: (60/100)*2000px;    
+    margin: 0 auto;
+}
+@mixin mainWidth {
+    width: 100%;
+    max-width: 2000px;    
+    margin: 0 auto;
+}
+
+@mixin background {
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;   
+    // background-attachment: fixed;
+}
+
+@mixin background2 {
+    background-size: cover;
+    background-position: right; 
+    background-repeat: no-repeat;   
+}
